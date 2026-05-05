@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _hoverScale: {x: 1.1, y: 1.1, z: 1}
-  _rotate: {x: 0, y: 0, z: 5}
+  _rotate: {x: 0, y: 0, z: 3}
 --- !u!1 &7420745703869761901
 GameObject:
   m_ObjectHideFlags: 0
