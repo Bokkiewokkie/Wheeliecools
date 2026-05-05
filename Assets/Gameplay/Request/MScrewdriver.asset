@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea2b60a8b2cc56749bd97456b8440bc2, type: 3}
-  m_Name: Cola
-  m_EditorClassIdentifier: Assembly-CSharp::Liquid
-  liquidName: Cola
-  color: {r: 0.13207549, g: 0.09173426, b: 0.030526884, a: 1}
+  m_Script: {fileID: 11500000, guid: 54daff1e46844364d96c9394315a5b54, type: 3}
+  m_Name: MScrewdriver
+  m_EditorClassIdentifier: Assembly-CSharp::Request
+  recipe: {fileID: 11400000, guid: b87649f8b1bbb0e45944bdbbab39512c, type: 2}
+  targetFill: 0.5
