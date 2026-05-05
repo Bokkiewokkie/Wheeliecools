@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Rum
   m_EditorClassIdentifier: Assembly-CSharp::Liquid
   liquidName: Rum
-  color: {r: 0.4245283, g: 0.27677253, b: 0.06608224, a: 1}
+  color: {r: 0.24528301, g: 0.14794691, b: 0.005784976, a: 1}

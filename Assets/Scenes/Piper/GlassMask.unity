@@ -157,6 +157,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39ee696d51ffb0a459f5a468f3f3e19e, type: 2}
   - {fileID: 11400000, guid: 7f52fc5ad57d30d41b1121b5beb6bd59, type: 2}
   - {fileID: 11400000, guid: d0ac9bf789f95d84db917c4206743d5f, type: 2}
+  - {fileID: 11400000, guid: 32bd118b6b9f51f4ca3e7dbe487f02b1, type: 2}
+  - {fileID: 11400000, guid: 74cf53834282df142addf738a2eb5f3b, type: 2}
   fillKey: 1
   nextGlass: 18
   prevGlass: 15
@@ -542,6 +544,7 @@ MonoBehaviour:
   filler: {fileID: 390855800}
   requests:
   - {fileID: 11400000, guid: 90557fcabc3e7dd478901d1c7c2c252b, type: 2}
+  - {fileID: 11400000, guid: f5c72f2536bdcfc43863e0d4bfea2397, type: 2}
   checkKey: 2
 --- !u!4 &2030139858
 Transform:
