@@ -11,6 +11,7 @@ public class Liquid : ScriptableObject
 	// dinking my oiter
 	public string liquidName = "Unknown";
 	public Color color = Color.white;
+	public float price = 1f; //per liter, in the 1920s of course
 
 #if UNITY_EDITOR
 	private void OnValidate()

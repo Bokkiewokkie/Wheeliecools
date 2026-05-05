@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Liquid
   liquidName: RedWine
   color: {r: 0.735849, g: 0.12148449, b: 0.12148449, a: 1}
+  price: 7.5

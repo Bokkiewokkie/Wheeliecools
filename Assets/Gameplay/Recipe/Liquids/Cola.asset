@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Liquid
   liquidName: Cola
   color: {r: 0.13207549, g: 0.09173426, b: 0.030526884, a: 1}
+  price: 0.26
