@@ -101,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 599077352691579940}
   - component: {fileID: -7658770404885116245}
+  - component: {fileID: 8980034471907550190}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Untagged
@@ -142,11 +143,18 @@ MonoBehaviour:
   minScaleY: 0.01
   maxScaleY: 1
   fillDuration: 3
-  recipes:
-  - {fileID: 11400000, guid: d8828e4f3914dbc47baf64f6f0a60c7b, type: 2}
-  OnMixed:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!114 &8980034471907550190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3604596067636069237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb127b72181e31a4fa9b7df7f627b0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Billboard
 --- !u!1 &5622891036618579797
 GameObject:
   m_ObjectHideFlags: 0

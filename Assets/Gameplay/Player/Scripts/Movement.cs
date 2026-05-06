@@ -17,11 +17,19 @@ public class GridPlayerController : MonoBehaviour
 	public float inspectDownOffset = 0.2f;
 	public float inspectLerpSpeed = 4f;
 
+	[Header("Glass Hold Settings")]
+	public float holdDistance = 0.55f;
+	public float holdLerpSpeed = 18f;
+	public float holdMouseRange = 0.15f;
+	public LayerMask glassSpotMask = Physics.DefaultRaycastLayers;
+
 	private bool isMoving = false;
 	private bool isInspecting = false;
 
 	private Vector3 cameraRestPosition;
 	private Vector3 cameraInspectPosition;
+
+	public Glass heldGlass;
 
 	public Key forward = Key.W;
 	public Key backward = Key.S;
@@ -34,7 +42,9 @@ public class GridPlayerController : MonoBehaviour
 			playerCamera = GetComponentInChildren<Camera>();
 
 		cameraRestPosition = playerCamera.transform.localPosition;
-		cameraInspectPosition = cameraRestPosition + Vector3.forward * inspectForwardOffset + Vector3.down * inspectDownOffset;
+		cameraInspectPosition = cameraRestPosition
+			+ Vector3.forward * inspectForwardOffset
+			+ Vector3.down * inspectDownOffset;
 	}
 
 	void Update()
@@ -46,13 +56,19 @@ public class GridPlayerController : MonoBehaviour
 			Time.deltaTime * inspectLerpSpeed
 		);
 
+		if (heldGlass != null)
+			UpdateHeldGlassPosition();
+
+		if (isInspecting && Mouse.current.leftButton.wasPressedThisFrame)
+			TryClickGlassSpot();
+
 		if (isMoving) return;
 
 		if (Keyboard.current[forward].wasPressedThisFrame)
 		{
 			TryMoveForward();
 		}
-		if (Keyboard.current[backward].wasPressedThisFrame)
+		else if (Keyboard.current[backward].wasPressedThisFrame)
 		{
 			if (isInspecting) isInspecting = false;
 		}
@@ -64,6 +80,80 @@ public class GridPlayerController : MonoBehaviour
 		{
 			StartCoroutine(RotateTo(90f));
 		}
+	}
+
+	private void TryClickGlassSpot()
+	{
+		Ray ray = playerCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+		if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, glassSpotMask))
+			return;
+
+		GlassSpot spot = hit.collider.GetComponent<GlassSpot>();
+		if (spot == null) return;
+
+		if (heldGlass == null)
+		{
+			// Try to pick up
+			if (spot.HasGlass)
+			{
+				heldGlass = spot.TakeGlass();
+
+				// Disable collider while carrying so it doesn't block raycasts
+				Collider col = heldGlass.GetComponent<Collider>();
+				if (col != null) col.enabled = false;
+
+				Debug.Log("Picked up: " + heldGlass.name);
+			}
+		}
+		else
+		{
+			// Try to place
+			if (spot.IsEmpty)
+			{
+				if (spot.PlaceGlass(heldGlass))
+				{
+					Debug.Log("Placed glass on: " + spot.name);
+					heldGlass = null;
+				}
+			}
+			else
+			{
+				Debug.Log("Spot already occupied!");
+			}
+		}
+	}
+
+
+	private void UpdateHeldGlassPosition()
+	{
+		Ray mouseRay = playerCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
+
+		// Plane sits holdDistance in front of the camera, facing the camera
+		Plane holdPlane = new Plane(
+			-playerCamera.transform.forward,
+			playerCamera.transform.position + playerCamera.transform.forward * holdDistance
+		);
+
+		Vector3 targetPos;
+		if (holdPlane.Raycast(mouseRay, out float enter))
+		{
+			Vector3 hit = mouseRay.GetPoint(enter);
+			Vector3 centre = playerCamera.transform.position + playerCamera.transform.forward * holdDistance;
+			Vector3 offset = Vector3.ClampMagnitude(hit - centre, holdMouseRange);
+			targetPos = centre + offset;
+		}
+		else
+		{
+			targetPos = playerCamera.transform.position + playerCamera.transform.forward * holdDistance;
+		}
+
+		heldGlass.transform.position = Vector3.Lerp(
+			heldGlass.transform.position, targetPos, Time.deltaTime * holdLerpSpeed);
+
+		// Keep the glass upright and facing the camera
+		heldGlass.transform.rotation = Quaternion.LookRotation(
+			playerCamera.transform.forward, Vector3.up);
 	}
 
 	void TryMoveForward()
