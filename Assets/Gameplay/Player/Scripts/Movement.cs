@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class GridPlayerController : MonoBehaviour
+public class Movement : MonoBehaviour
 {
 	// Move your player on the grid, inspect closer if you go to an interactable object!
 
@@ -19,8 +19,8 @@ public class GridPlayerController : MonoBehaviour
 
 	[Header("Glass Hold Settings")]
 	public float holdDistance = 0.55f;
-	public float holdLerpSpeed = 18f;
 	public float holdMouseRange = 0.15f;
+	public float holdLerpSpeed = 18f;
 	public LayerMask glassSpotMask = Physics.DefaultRaycastLayers;
 
 	private bool isMoving = false;
@@ -94,7 +94,6 @@ public class GridPlayerController : MonoBehaviour
 
 		if (heldGlass == null)
 		{
-			// Try to pick up
 			if (spot.HasGlass)
 			{
 				heldGlass = spot.TakeGlass();
@@ -108,7 +107,6 @@ public class GridPlayerController : MonoBehaviour
 		}
 		else
 		{
-			// Try to place
 			if (spot.IsEmpty)
 			{
 				if (spot.PlaceGlass(heldGlass))
@@ -124,12 +122,10 @@ public class GridPlayerController : MonoBehaviour
 		}
 	}
 
-
 	private void UpdateHeldGlassPosition()
 	{
 		Ray mouseRay = playerCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
-		// Plane sits holdDistance in front of the camera, facing the camera
 		Plane holdPlane = new Plane(
 			-playerCamera.transform.forward,
 			playerCamera.transform.position + playerCamera.transform.forward * holdDistance
@@ -148,8 +144,14 @@ public class GridPlayerController : MonoBehaviour
 			targetPos = playerCamera.transform.position + playerCamera.transform.forward * holdDistance;
 		}
 
-		heldGlass.transform.position = Vector3.Lerp(
-			heldGlass.transform.position, targetPos, Time.deltaTime * holdLerpSpeed);
+		if (isMoving)
+		{
+			heldGlass.transform.position = targetPos;
+		}
+		else
+		{
+			heldGlass.transform.position = Vector3.Lerp(heldGlass.transform.position, targetPos, Time.deltaTime * holdLerpSpeed);
+		}
 
 		// Keep the glass upright and facing the camera
 		heldGlass.transform.rotation = Quaternion.LookRotation(
@@ -204,7 +206,6 @@ public class GridPlayerController : MonoBehaviour
 	IEnumerator RotateTo(float angleDelta)
 	{
 		isMoving = true;
-
 		isInspecting = false;
 
 		Quaternion startRotation = transform.rotation;

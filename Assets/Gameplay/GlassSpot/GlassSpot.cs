@@ -3,7 +3,12 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class GlassSpot : MonoBehaviour
 {
+	[Header("References")]
+	[Tooltip("BOTTOM of the glass")]
 	public Transform glassAnchor;
+
+	[Header("Starting Glass")]
+	public Glass startingGlassPrefab;
 
 	private Glass currentGlass;
 
@@ -13,8 +18,16 @@ public class GlassSpot : MonoBehaviour
 
 	void Awake()
 	{
-		Transform anchor = glassAnchor != null ? glassAnchor : transform;
-		currentGlass = anchor.GetComponentInChildren<Glass>();
+		// Register any glass already placed in the scene as a child of the anchor
+		currentGlass = AnchorOrSelf().GetComponentInChildren<Glass>();
+	}
+
+	void Start()
+	{
+		if (IsEmpty && startingGlassPrefab != null)
+		{
+			PlaceGlass(Instantiate(startingGlassPrefab));
+		}
 	}
 
 	public Glass TakeGlass()
@@ -31,28 +44,38 @@ public class GlassSpot : MonoBehaviour
 	{
 		if (!IsEmpty || glass == null) return false;
 
-		currentGlass = glass;
+		float halfHeight = GetHalfHeight(glass);
 
-		Transform anchor = glassAnchor != null ? glassAnchor : transform;
+		currentGlass = glass;
+		Transform anchor = AnchorOrSelf();
 		glass.transform.SetParent(anchor);
-		glass.transform.localPosition = Vector3.zero;
+
+		// Lift so the bottom edge of the sprite sits on the anchor point
+		glass.transform.localPosition = Vector3.up * halfHeight;
 		glass.transform.localRotation = Quaternion.identity;
 
-		Collider col = glass.GetComponent<Collider>();
-		if (col != null) col.enabled = true;
-
 		return true;
+	}
+	private Transform AnchorOrSelf() => glassAnchor != null ? glassAnchor : transform;
+
+	private static float GetHalfHeight(Glass glass)
+	{
+		SpriteRenderer sr = glass.GetComponentInChildren<SpriteRenderer>();
+		if (sr != null) return sr.bounds.extents.y;
+
+		// Fallback if no SpriteRenderer is found
+		return glass.transform.localScale.y * 0.5f;
 	}
 
 #if UNITY_EDITOR
 	void OnDrawGizmosSelected()
 	{
-		Transform anchor = glassAnchor != null ? glassAnchor : transform;
+		Transform anchor = AnchorOrSelf();
 		Gizmos.color = currentGlass != null
 			? new Color(0f, 1f, 0.3f, 0.35f)
 			: new Color(1f, 1f, 0f, 0.2f);
 		Gizmos.matrix = anchor.localToWorldMatrix;
-		Gizmos.DrawCube(Vector3.zero, new Vector3(0.25f, 0.35f, 0.25f));
+		Gizmos.DrawCube(new Vector3(0f, 0.175f, 0f), new Vector3(0.25f, 0.35f, 0.25f));
 		Gizmos.matrix = Matrix4x4.identity;
 	}
 #endif
