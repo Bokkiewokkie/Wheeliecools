@@ -433,6 +433,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &153817049
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7692853520399574815, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_Name
+      value: Tapper
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.8516238
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.774
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.136
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411623130354689586, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be539a78a72cea14a9e8887ee016a27b, type: 3}
 --- !u!1 &167311894
 GameObject:
   m_ObjectHideFlags: 0
@@ -3080,7 +3137,7 @@ GameObject:
   - component: {fileID: 1494280134}
   - component: {fileID: 1494280133}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: Tapper
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4352,6 +4409,10 @@ PrefabInstance:
       propertyPath: 'Recipes.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: b87649f8b1bbb0e45944bdbbab39512c, type: 2}
+    - target: {fileID: 6118723256454078651, guid: 950c6dba0f3fc9044abf01612c08088f, type: 3}
+      propertyPath: 'Recipes.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b87649f8b1bbb0e45944bdbbab39512c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4372,3 +4433,4 @@ SceneRoots:
   - {fileID: 195158003}
   - {fileID: 1613955111}
   - {fileID: 620449283}
+  - {fileID: 153817049}

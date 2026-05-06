@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3177930085325123619}
   - component: {fileID: 3818752457792962921}
   m_Layer: 6
-  m_Name: GlassSpot
+  m_Name: GlassSpot Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlassSpot
   glassAnchor: {fileID: 7728791219981965218}
-  startingGlassPrefab: {fileID: -7658770404885116245, guid: 04ed7a30616d75345afc2a8c831869e3, type: 3}
+  startingGlassPrefab: {fileID: 0}
 --- !u!1 &8017803475100553196
 GameObject:
   m_ObjectHideFlags: 0
