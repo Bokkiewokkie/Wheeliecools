@@ -1,25 +1,27 @@
 using System;
+using System.ComponentModel;
 using TMPro;
 using UnityEngine;
 
 public class ShopManager : MonoBehaviour
 {
-    public float Funds = 0; //Our cash //TODO: pulled from the inventory manager
+    public float Funds = 0; //Our cash
+    [SerializeField] private InventoryManager Inventory;
     [SerializeField] private TextMeshProUGUI PageTracker;
     [SerializeField] private TextMeshProUGUI FundTracker;
 
+    
     private int PageNumber = 1;
     private int PageAmount = 4;
 
-    void Start()
+    void Awake()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        FundTracker.text = "Funds $" + Funds.ToString();
+        FundTracker.text = "Funds: $" + Inventory.Funds.ToString();
     }
 
     // Always changes only one page at a time
@@ -35,4 +37,18 @@ public class ShopManager : MonoBehaviour
         }
         PageTracker.text = PageNumber.ToString();
     }
+
+    public void Purchase(string DrinkName)
+    {
+        Liquid BoughtLiquid = Inventory.NameToLiquid(DrinkName);
+        float Funds = Inventory.Funds;
+        Funds -= BoughtLiquid.price;
+        if(Funds > 0) //Oh you can actually afford it!
+        {
+            Inventory.AddLiquid(DrinkName, 100f); //100cL, so a Liter of it (price is per liter)
+            Inventory.Funds = Funds;
+        }
+    }
+
 }
+
