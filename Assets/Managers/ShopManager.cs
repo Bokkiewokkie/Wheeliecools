@@ -10,13 +10,27 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI PageTracker;
     [SerializeField] private TextMeshProUGUI FundTracker;
 
-    
     private int PageNumber = 1;
-    private int PageAmount = 4;
+    private int PageAmount = 1;
 
-    void Awake()
+    
+	public static ShopManager Instance { get; private set; }
+	private void Awake()
+	{
+		if (Instance != null && Instance != this)
+		{
+			Destroy(this.gameObject);
+			Debug.Log("ShopManager already exists");
+		}
+		else
+		{
+			Instance = this;
+		}
+	}
+
+    void Start()
     {
-        
+        Inventory = InventoryManager.Instance;
     }
 
     void Update()
@@ -46,7 +60,7 @@ public class ShopManager : MonoBehaviour
         if(Funds > 0) //Oh you can actually afford it!
         {
             Inventory.AddLiquid(DrinkName, 100f); //100cL, so a Liter of it (price is per liter)
-            Inventory.Funds = Funds;
+            Inventory.Funds = (float)Math.Round(Funds, 2);
         }
     }
 

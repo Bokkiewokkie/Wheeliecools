@@ -25,7 +25,6 @@ public class InventoryManager : MonoBehaviour
     void Start()
     {
         foreach(Liquid Bubbles in Liquids){
-            Debug.Log(Bubbles.liquidName);
             LiquidsInventory.Add(Bubbles.liquidName, 20f); //We get 20 cL of every drink to start
         }
     }

@@ -34,8 +34,8 @@ public class Glass : MonoBehaviour
 	}
 
 	private float fillAmount = 0f;
-	private Color mixedColor = Color.white;
-	private float totalFillAdded = 0f;
+	public Color mixedColor = Color.white;
+	public float totalFillAdded = 0f;
 
 	private Dictionary<Liquid, float> liquidAmounts = new Dictionary<Liquid, float>();
 
@@ -136,11 +136,17 @@ public class Glass : MonoBehaviour
 		return result;
 	}
 
-	//This is kinda terrible honestly, it works just enough but it isn't realistic in the slightest! Brown and white should not become a green
 	private void MixColor(Color incoming, float weight)
 	{
+		float Transparency = Mathf.Clamp((mixedColor.a*totalFillAdded + incoming.a*weight)/(weight+totalFillAdded), 0, 1f);
 		totalFillAdded += weight;
-		mixedColor = Color.Lerp(mixedColor, incoming, weight / totalFillAdded);
+		Vector4 OurColor = mixedColor;
+		Vector4 OtherColor = incoming;
+		//We have to convert color to vector4 before being able to convert to vector3
+		Vector3 OurColor3 = OurColor;
+		Vector3 OtherColor3 = OtherColor;
+		Vector3 NewColor = Vector3.Slerp(OurColor, OtherColor, weight/totalFillAdded);
+		mixedColor = new Color(NewColor.x, NewColor.y, NewColor.z, Transparency); //Now turn them back into a 4 vector color obj
 	}
 
 	private void ApplyVisuals()
