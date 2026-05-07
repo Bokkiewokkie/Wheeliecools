@@ -61,4 +61,14 @@ public class InventoryManager : MonoBehaviour
     {
         LiquidsInventory[LiquidName] += amount;
     }
+
+    public void AddFunds(float Amount)
+    {
+        Funds = (float)Math.Round(Funds + Amount, 2);
+    }
+
+    public void TakeFunds(float Amount)
+    {
+        Funds = (float)Math.Round(Math.Max(Funds - Amount, 0), 2); //Props if you somehow subtracted more than we had but not today buddy
+    }
 }

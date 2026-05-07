@@ -7,6 +7,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using Unity.Mathematics;
+using UnityEngine.InputSystem;
 
 // CODE (C) Colin McInerney 2025
 
@@ -55,6 +56,14 @@ public class TheWheel : MonoBehaviour
     private readonly Vector3 _dirLeft = new Vector3(0f, 0f, 90f);
     
     private readonly int _targetSelections = 4; // how many selections _should_ be made
+
+	public Key forward = Key.W;
+	public Key backward = Key.S;
+	public Key left = Key.A;
+	public Key right = Key.D;
+	public Key space = Key.Space;
+	public Key rotate = Key.R;
+
     #endregion
 
     #region Unity Methods
@@ -70,37 +79,37 @@ public class TheWheel : MonoBehaviour
         if (_state != WheelState.AwaitingSelection) // this is used in some other places too but as a failsafe i put it here
             return;
         
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Keyboard.current[space].wasPressedThisFrame)
         {
             ProcessConfirmInput();
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Keyboard.current[rotate].wasPressedThisFrame)
         {
             Rotate();
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Keyboard.current[forward].wasPressedThisFrame)
         {
             ProcessDirectionInput(Vector2.up);
             return;
         }
         
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Keyboard.current[backward].wasPressedThisFrame)
         {
             ProcessDirectionInput(-Vector2.up);
             return;
         }
         
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Keyboard.current[left].wasPressedThisFrame)
         {
             ProcessDirectionInput(-Vector2.right);
             return;
         }
         
-        if (Input.GetKeyDown(KeyCode.D))
+        if (Keyboard.current[right].wasPressedThisFrame)
         {
             ProcessDirectionInput(Vector2.right);
         }
