@@ -36,6 +36,8 @@ public class Movement : MonoBehaviour
 	public Key left = Key.A;
 	public Key right = Key.D;
 
+	private InspectableObject currentInspectable;
+
 	void Start()
 	{
 		if (playerCamera == null)
@@ -70,7 +72,7 @@ public class Movement : MonoBehaviour
 		}
 		else if (Keyboard.current[backward].wasPressedThisFrame)
 		{
-			if (isInspecting) isInspecting = false;
+			if (isInspecting) StopInspecting();
 		}
 		else if (Keyboard.current[left].wasPressedThisFrame)
 		{
@@ -80,6 +82,20 @@ public class Movement : MonoBehaviour
 		{
 			StartCoroutine(RotateTo(90f));
 		}
+	}
+
+	private void StartInspecting(InspectableObject target)
+	{
+		isInspecting = true;
+		currentInspectable = target;
+		target?.StartInspect();
+	}
+
+	private void StopInspecting()
+	{
+		isInspecting = false;
+		currentInspectable?.StopInspect();
+		currentInspectable = null;
 	}
 
 	private void TryClickGlassSpot()
@@ -167,19 +183,20 @@ public class Movement : MonoBehaviour
 		{
 			if (hit.collider.CompareTag("Interactable"))
 			{
-				isInspecting = true;
+				InspectableObject inspectable = hit.collider.GetComponent<InspectableObject>();
+				StartInspecting(inspectable);
 				Debug.Log("Inspecting: " + hit.collider.name);
 			}
 			else
 			{
-				isInspecting = false;
+				StopInspecting(); 
 				Debug.Log("Blocked by obstacle!");
 			}
 			return;
 		}
 
 		// Moving away from whatever we were looking at, stop inspecting
-		isInspecting = false;
+		StopInspecting();
 
 		Vector3 targetPosition = transform.position + transform.forward * gridSize;
 		StartCoroutine(MoveTo(targetPosition));
@@ -206,7 +223,7 @@ public class Movement : MonoBehaviour
 	IEnumerator RotateTo(float angleDelta)
 	{
 		isMoving = true;
-		isInspecting = false;
+		StopInspecting(); // ?? CHANGED (was: isInspecting = false)
 
 		Quaternion startRotation = transform.rotation;
 		Quaternion targetRotation = Quaternion.Euler(

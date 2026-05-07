@@ -549,7 +549,7 @@ PrefabInstance:
     - target: {fileID: 6118723256454078651, guid: 950c6dba0f3fc9044abf01612c08088f, type: 3}
       propertyPath: 'Recipes.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: d8828e4f3914dbc47baf64f6f0a60c7b, type: 2}
+      objectReference: {fileID: 11400000, guid: fddc0c1dc6251714fa027bc29a23a578, type: 2}
     - target: {fileID: 6118723256454078651, guid: 950c6dba0f3fc9044abf01612c08088f, type: 3}
       propertyPath: 'Recipes.Array.data[1]'
       value: 
@@ -557,11 +557,11 @@ PrefabInstance:
     - target: {fileID: 6118723256454078651, guid: 950c6dba0f3fc9044abf01612c08088f, type: 3}
       propertyPath: 'Recipes.Array.data[2]'
       value: 
-      objectReference: {fileID: 11400000, guid: b87649f8b1bbb0e45944bdbbab39512c, type: 2}
+      objectReference: {fileID: 11400000, guid: 953c08d78d0fdf642942da9a264572c8, type: 2}
     - target: {fileID: 6118723256454078651, guid: 950c6dba0f3fc9044abf01612c08088f, type: 3}
       propertyPath: 'Recipes.Array.data[3]'
       value: 
-      objectReference: {fileID: 11400000, guid: b87649f8b1bbb0e45944bdbbab39512c, type: 2}
+      objectReference: {fileID: 11400000, guid: d8828e4f3914dbc47baf64f6f0a60c7b, type: 2}
     - target: {fileID: 6118723256454078651, guid: 950c6dba0f3fc9044abf01612c08088f, type: 3}
       propertyPath: 'Recipes.Array.data[4]'
       value: 
@@ -667,13 +667,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2932081821209955100, guid: b9ef08cc676b25641b92172360111587, type: 3}
+      propertyPath: m_Size
+      value: 0.94823474
+      objectReference: {fileID: 0}
     - target: {fileID: 3420716739482503097, guid: b9ef08cc676b25641b92172360111587, type: 3}
       propertyPath: m_Horizontal
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3420716739482503097, guid: b9ef08cc676b25641b92172360111587, type: 3}
-      propertyPath: m_MovementType
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3420716739482503097, guid: b9ef08cc676b25641b92172360111587, type: 3}
       propertyPath: m_VerticalScrollbarVisibility
@@ -711,10 +711,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5993105406125667175, guid: b9ef08cc676b25641b92172360111587, type: 3}
-      propertyPath: recipeCardPrefab
-      value: 
-      objectReference: {fileID: 8280801928044957804, guid: a5558bf75dc43a64683c44811923bff5, type: 3}
     - target: {fileID: 6178843063844878968, guid: b9ef08cc676b25641b92172360111587, type: 3}
       propertyPath: m_CellSize.y
       value: 320
@@ -809,7 +805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7895365084422607547, guid: b9ef08cc676b25641b92172360111587, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 23.528809
+      value: 23.529745
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
