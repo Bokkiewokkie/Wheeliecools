@@ -7,6 +7,8 @@ public class Glass : MonoBehaviour
 
 	public Transform fillSquare;
 
+	public int glassType = 0;
+
 	[Header("Fill Scale Bounds")]
 	public float minScaleY = 0.01f;
 	public float maxScaleY = 1f;
@@ -18,7 +20,7 @@ public class Glass : MonoBehaviour
 		public string liquidName;
 		public float targetAmount;
 		public float actualAmount;
-		public float score;         // 0–100
+		public float score;            // 0-100
 	}
 
 	public struct RecipeScore
@@ -106,7 +108,7 @@ public class Glass : MonoBehaviour
 			if (ing.liquid != null)
 			{
 				liquidAmounts.TryGetValue(ing.liquid, out actualAmount);
-			} 
+			}
 
 			float matched = Mathf.Min(actualAmount, targetAmount);
 			matchedTotal += matched;
@@ -162,7 +164,7 @@ public class Glass : MonoBehaviour
 	}
 
 #if UNITY_EDITOR
-void OnDrawGizmosSelected()
+	void OnDrawGizmosSelected()
 	{
 		if (fillSquare == null) return;
 

@@ -6,6 +6,8 @@ public class RequestManager : MonoBehaviour
 {
 	public List<Request> Requests = new List<Request>();
 
+	public int glassTypes = 0;
+
 	public float minFill = 0.25f;
 	public float maxFill = 1f;
 	public int fillSteps = 4;
@@ -27,10 +29,11 @@ public class RequestManager : MonoBehaviour
 
 	public void GenerateRequest()
 	{
-		Request random = Request.GenerateRandom(RecipeManager.Instance.Recipes, minFill, maxFill);
+		Request random = Request.GenerateRandom(RecipeManager.Instance.Recipes, glassTypes, minFill, maxFill, fillSteps);
 		Requests.Add(random);
 	}
 }
+
 #if UNITY_EDITOR
 [CustomEditor(typeof(RequestManager))]
 public class RequestManagerEditor : Editor

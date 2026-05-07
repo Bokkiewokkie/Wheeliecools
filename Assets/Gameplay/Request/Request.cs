@@ -6,13 +6,13 @@ public class Request : ScriptableObject
 	public Recipe recipe;
 
 	[Range(0f, 1f)]
-	[Tooltip("How full the glass should be (0–1 of its total capacity)")]
+	[Tooltip("How full the glass should be (0-1 of its total capacity)")]
 	public float targetFill = 0.75f;
 
-	// Glass
-	// Additional?
+	[Tooltip("The glass type this request requires, matched against Glass.glassType.")]
+	public int glassType = 0;
 
-	public static Request GenerateRandom(Recipe[] recipePool, float minFill = 0.5f, float maxFill = 1f, int fillSteps = 4)
+	public static Request GenerateRandom(Recipe[] recipePool, int glassTypes = 0, float minFill = 0.5f, float maxFill = 1f, int fillSteps = 4)
 	{
 		if (recipePool == null || recipePool.Length == 0)
 		{
@@ -29,16 +29,15 @@ public class Request : ScriptableObject
 
 		int minStep = Mathf.RoundToInt(Mathf.Clamp01(minFill) * fillSteps);
 		int maxStep = Mathf.RoundToInt(Mathf.Clamp01(maxFill) * fillSteps);
-
 		int chosenStep = Random.Range(minStep, maxStep + 1);
 
 		Request request = CreateInstance<Request>();
 		request.recipe = valid[Random.Range(0, valid.Length)];
 		request.targetFill = chosenStep / (float)fillSteps;
 
-		Debug.Log("New Request:");
-		Debug.Log(request.recipe.ToString());
-		Debug.Log(request.targetFill.ToString());
+		request.glassType = Random.Range(0, glassTypes);
+
+		Debug.Log($"New Request: {request.recipe}, fill {request.targetFill}, glass type {request.glassType}");
 
 		return request;
 	}
