@@ -33,9 +33,6 @@ public class RecipeBookUI : MonoBehaviour
 			RecipeCardUI card = Instantiate(recipeCardPrefab, cardContainer);
 			size = cardSizeStart + (recipe.ingredients.Length*30);
 
-			Debug.Log((recipe.ingredients.Length * 30));
-			Debug.Log(size);
-
 			if (size > cardSize) cardSize = size;	
 
 			card.Populate(recipe);
@@ -46,7 +43,8 @@ public class RecipeBookUI : MonoBehaviour
 
 		LayoutRebuilder.ForceRebuildLayoutImmediate(cardContainer);
 
-		float sizey = (group.cellSize.y + group.padding.bottom) * (recipeCount/3);
+		// + 1 added to not break the RecipeBook since there's 17 recipes lol
+		float sizey = (group.cellSize.y + group.padding.bottom) * ((recipeCount + 1) / 3);
 		RectTransform rt  = cardContainer.GetComponent<RectTransform>();
 		rt.sizeDelta = new Vector2(rt.sizeDelta.x, sizey);
 	}

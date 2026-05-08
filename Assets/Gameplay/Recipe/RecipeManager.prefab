@@ -44,6 +44,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f8fd06d09546d4cadeb620a12875a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RecipeManager
-  recipes:
+  Recipes:
+  - {fileID: 11400000, guid: 48ce938af17cac3a8b0233afe1199437, type: 2}
+  - {fileID: 11400000, guid: 58a57d02fa4179a758fbf249fb918e23, type: 2}
+  - {fileID: 11400000, guid: f0f44a95709f0719893b41e3afde1ddf, type: 2}
+  - {fileID: 11400000, guid: 6b14c7615abc884118cc11ead664118b, type: 2}
+  - {fileID: 11400000, guid: 66ce2d1e1828ab5dbba7394249af5065, type: 2}
+  - {fileID: 11400000, guid: f0ab888333726f1d5bdff13337cdc6d4, type: 2}
+  - {fileID: 11400000, guid: e8530777a89dd6161b61aea60fb56c95, type: 2}
+  - {fileID: 11400000, guid: 9473bbb638bca20d79972d5fb3967ecc, type: 2}
+  - {fileID: 11400000, guid: 0edb40745c252b6e3a394f249a6e3cf8, type: 2}
+  - {fileID: 11400000, guid: a632912c1852ba3fa9eb9c9dea0ccf89, type: 2}
+  - {fileID: 11400000, guid: bab79b3ffed7af3e288d2bb33c334109, type: 2}
+  - {fileID: 11400000, guid: cd39d08064f9fa4458c8e556b0ebd6ab, type: 2}
   - {fileID: 11400000, guid: d8828e4f3914dbc47baf64f6f0a60c7b, type: 2}
+  - {fileID: 11400000, guid: a71d3f9ecde34273e818e89d0cd41aa0, type: 2}
+  - {fileID: 11400000, guid: 2751c5410e9a5b799b6bf26a3e1eeed6, type: 2}
   - {fileID: 11400000, guid: b87649f8b1bbb0e45944bdbbab39512c, type: 2}
+  - {fileID: 11400000, guid: 2667e83ecbff927339f9297d6f30c2a1, type: 2}
