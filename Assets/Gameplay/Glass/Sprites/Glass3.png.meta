@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d18252deb646e25468ea9db647d980a0
+guid: d0a38c42548fe68418274b67906c7d02
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2809051866242792288
-    second: Glass4_0
+      213: -3071176681653120172
+    second: Glass3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -48,10 +48,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glass4_0
+      name: Glass3_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 3
-        width: 108
-        height: 183
+        x: 0
+        y: 0
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06bbc031ac1cbf620800000000000000
-      internalID: 2809051866242792288
+      spriteID: 4535a9f641df065d0800000000000000
+      internalID: -3071176681653120172
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b777a12b4f02748428161afb1f0d69ab
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Glass4_0: 2809051866242792288
+      Glass3_0: -3071176681653120172
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

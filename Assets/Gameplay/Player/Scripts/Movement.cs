@@ -223,7 +223,7 @@ public class Movement : MonoBehaviour
 	IEnumerator RotateTo(float angleDelta)
 	{
 		isMoving = true;
-		StopInspecting(); // ?? CHANGED (was: isInspecting = false)
+		StopInspecting();
 
 		Quaternion startRotation = transform.rotation;
 		Quaternion targetRotation = Quaternion.Euler(

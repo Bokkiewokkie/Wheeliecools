@@ -142,8 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   fillSquare: {fileID: 824371346735488275}
   glassType: 0
-  minScaleY: 0.01
-  maxScaleY: 1
+  minScaleY: 0.21
+  maxScaleY: 0.76
   fillDuration: 3
   mixedColor: {r: 1, g: 1, b: 1, a: 1}
   totalFillAdded: 0

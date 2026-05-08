@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 02bc145b91f9cfa47bb8e4578ba71a9c
+guid: 91ff701a79d06274fb4d38e0c4401f59
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7087572274380605320
-    second: Glass3Mask_0
+      213: 2914363668683234313
+    second: Glass5Mask_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 256
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glass3Mask_0
+      name: Glass5Mask_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 878f2a96192e3ad90800000000000000
-      internalID: -7087572274380605320
+      spriteID: 90c1b22d056e17820800000000000000
+      internalID: 2914363668683234313
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Glass3Mask_0: -7087572274380605320
+      Glass5Mask_0: 2914363668683234313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
