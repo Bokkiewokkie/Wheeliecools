@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider))]
 public class GlassSpot : MonoBehaviour
@@ -15,6 +16,9 @@ public class GlassSpot : MonoBehaviour
 	public bool IsEmpty => currentGlass == null;
 	public bool HasGlass => currentGlass != null;
 	public Glass CurrentGlass => currentGlass;
+
+	public UnityEvent PlacedGlass;
+	public UnityEvent TookGlass;
 
 	void Awake()
 	{
@@ -37,6 +41,9 @@ public class GlassSpot : MonoBehaviour
 		Glass taken = currentGlass;
 		currentGlass = null;
 		taken.transform.SetParent(null);
+
+		TookGlass.Invoke();
+
 		return taken;
 	}
 
@@ -53,6 +60,8 @@ public class GlassSpot : MonoBehaviour
 		// Lift so the bottom edge of the sprite sits on the anchor point
 		glass.transform.localPosition = Vector3.up * halfHeight;
 		glass.transform.localRotation = Quaternion.identity;
+
+		PlacedGlass.Invoke();
 
 		return true;
 	}
