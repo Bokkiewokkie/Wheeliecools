@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RequestManager : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class RequestManager : MonoBehaviour
 	public float minFill = 0.25f;
 	public float maxFill = 1f;
 	public int fillSteps = 4;
+
+	public UnityEvent RequestCreated;
+	public UnityEvent RequestDestroyed;
 
 	// Singleton design pattern, only 1 RequestManager can exist at a time.
 	public static RequestManager Instance { get; private set; }
@@ -31,6 +36,13 @@ public class RequestManager : MonoBehaviour
 	{
 		Request random = Request.GenerateRandom(RecipeManager.Instance.Recipes, glassTypes, minFill, maxFill, fillSteps);
 		Requests.Add(random);
+		RequestCreated.Invoke();
+	}
+
+	public void DestroyRequest(int index)
+	{
+		Requests.RemoveAt(index);
+		RequestDestroyed.Invoke();
 	}
 }
 

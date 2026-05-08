@@ -76,7 +76,7 @@ public class SellSpot : MonoBehaviour
 				  $"Purity: {bestScore.purityScore:0.0}  " +
 				  $"Fill: {bestScore.fillScore:0.0}]");
 
-		requests.RemoveAt(bestIndex);
+		RequestManager.Instance?.DestroyRequest(bestIndex);
 		glassSpot.TakeGlass();
 		Destroy(glass.gameObject);
 	}
