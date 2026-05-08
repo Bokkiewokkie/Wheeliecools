@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 using TMPro;
 
 public class ShopNav : MonoBehaviour
@@ -11,6 +12,15 @@ public class ShopNav : MonoBehaviour
     [SerializeField] private Button CheckoutButton;
     [SerializeField] private TextMeshProUGUI FundTracker;
     [SerializeField] private TheWheel Wheel;
+    public UnityEvent ExitShopEvent;
+
+    void Start() //Don't start with the shop open lol
+    {
+        Wheel.gameObject.SetActive(false);
+        NavigationButtons.enabled = false;
+        ShopWindow.enabled = false;
+        CheckoutWindow.enabled = false;
+    }
 
     void Update()
     {
@@ -50,5 +60,6 @@ public class ShopNav : MonoBehaviour
         ShopWindow.enabled = false;
         CheckoutWindow.enabled = false;
         AudioManager.Instance.ResumeTrack(false);
+        ExitShopEvent.Invoke();
     }
 }

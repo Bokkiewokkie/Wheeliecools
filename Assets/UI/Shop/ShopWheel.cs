@@ -52,6 +52,12 @@ public class ShopWheel : MonoBehaviour
 
     public void GetResult(WheelPayload payload)
     {
-        value += payload.TotalValue;
+        value += payload.BaseValue * (payload.SliceValue/2);
+        CheckoutManager.Instance.CalculateFee();
+    }
+
+    public void Reset()
+    {
+        value = 0;
     }
 }

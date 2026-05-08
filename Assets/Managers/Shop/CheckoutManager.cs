@@ -71,9 +71,13 @@ public class CheckoutManager : MonoBehaviour
             }
         }
         TotalCost.text = $"Subtotal: ${CalculateTotalPrice(0)}\n";
-        PercentageFee -= WheelValue.value;
         TotalCost.text += ((PercentageFee < 0) ? "Discount:" : "Fee:") + $" %{Math.Round(PercentageFee)}" + "\n";
         TotalCost.text += $"Total: ${CalculateTotalPrice(PercentageFee)}";
+    }
+    
+    public void CalculateFee()
+    {
+        PercentageFee -= WheelValue.value;
     }
 
     private float CalculateItemPrice(Liquid Slurm)
@@ -104,8 +108,10 @@ public class CheckoutManager : MonoBehaviour
                 Purchase(Bottle, amount, price);
             }
             Cart.Clear(); //Don't forget to empty that out
-            FormatCart(); //And to show it
             Wheel.Reset(); //After you complete your purchase, the wheel gets reset
+            PercentageFee = 8f;
+            WheelValue.Reset();
+            FormatCart(); //And to show it
         }
     }
 
