@@ -2,8 +2,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
-    [SerializeField] private string SceneName;
+    public string SceneName;
 
+    // Singleton design pattern, only 1 SceneLoader can exist at a time.
+    public static SceneLoader Instance { get; private set; }
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            Debug.Log("SceneLoader already exists");
+        }
+        else
+        {
+            if (transform.parent == null)
+            {
+                DontDestroyOnLoad(gameObject);
+                Instance = this;
+            }
+        }
+    }    
 
     public void LoadScene()
     {
@@ -11,12 +30,14 @@ public class SceneLoader : MonoBehaviour
         switch(SceneName){
             case "Game":
                 AudioManager.Instance.SwitchMusic(1);
+                SceneName = "EndMenu";
                 break;
             case "StartMenu":
-                AudioManager.Instance.SwitchMusic(0);
+                SceneName = "Game";
                 break;
             case "EndMenu":
                 AudioManager.Instance.SwitchMusic(0);
+                SceneName = "StartMenu";
                 break;
             default:
                 Debug.Log("Tried to load invalid scene with Scene Loader.");
