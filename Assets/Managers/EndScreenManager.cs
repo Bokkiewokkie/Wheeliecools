@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 using TMPro;
 
 public class EndScreenManager : MonoBehaviour
@@ -14,7 +15,7 @@ public class EndScreenManager : MonoBehaviour
     private void UpdateScore()
     {
         ScoreField.text += "Final Score\n";
-        ScoreField.text += "Remaining Cash:" + InventoryManager.Instance.Funds.ToString() + "\n";
+        ScoreField.text += "Remaining Cash:" + Math.Round(InventoryManager.Instance.Funds,2).ToString() + "\n";
         ScoreField.text += "Completed Orders: " + ScoreManager.Instance.completedrequests.ToString();
     }
 
