@@ -44,4 +44,9 @@ public class SceneLoader : MonoBehaviour
                 break;
         }
     }
+
+    public void LoadScene(string wawa){
+        SceneName = wawa;
+        LoadScene();
+    }
 }

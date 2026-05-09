@@ -20,7 +20,7 @@ public class EndScreenManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneLoader.Instance.LoadScene();
+        SceneLoader.Instance.LoadScene("StartMenu");
     }
 
 }

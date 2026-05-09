@@ -847,14 +847,18 @@ PrefabInstance:
     - target: {fileID: 3588974124283521369, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1744759206}
+      objectReference: {fileID: 1744759207}
     - target: {fileID: 3588974124283521369, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3588974124283521369, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ReturnToMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588974124283521369, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: EndScreenManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5323322658555278356, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
       propertyPath: m_text
