@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Linq.Expressions;
 
 public class AudioManager : MonoBehaviour
 {
@@ -86,6 +87,9 @@ public class AudioManager : MonoBehaviour
             MusicPlayer.loop = false;
             QueueTime = (int)AudioSettings.dspTime + (int)Songs[track].length; //When the next song should play    
         }
+        else{
+            MusicPlayer.loop = true;
+        }
         MusicPlayer.Play();
     }
 
@@ -100,12 +104,12 @@ public class AudioManager : MonoBehaviour
         else if(SecondTrack)
         {
             SecondTrack = false;
-            SwitchMusic(4);
+            SwitchMusic(1);
         }
         else
         {
             FirstTrack = true;
-            SwitchMusic(1);
+            SwitchMusic(4);
         }
     }
 
