@@ -4762,13 +4762,17 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 1847133141112682291, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
+    - target: {fileID: 2104942814571140325, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2500846232401857558, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
       propertyPath: m_Name
       value: Shop
       objectReference: {fileID: 0}
     - target: {fileID: 2500846232401857558, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2920255235492429923, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
       propertyPath: m_sharedMaterial

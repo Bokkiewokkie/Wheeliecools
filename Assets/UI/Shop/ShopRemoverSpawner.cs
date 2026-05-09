@@ -1,9 +1,10 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class ShopRemoverSpawner : MonoBehaviour
 {
     [SerializeField] private ShopOrderRemover ItemPrefab;
-    private List<ShopOrderRemover> Items;
+    private List<ShopOrderRemover> Items = new List<ShopOrderRemover>();
     public void SpawnRemovalButton(string LiquidName)
     {
         ShopOrderRemover Item = Instantiate(ItemPrefab);
