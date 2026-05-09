@@ -200,8 +200,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u2190"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: ed2e47cec7d2908429787100705bcdde, type: 2}
-  m_sharedMaterial: {fileID: 1202285019548920541, guid: ed2e47cec7d2908429787100705bcdde, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
+  m_sharedMaterial: {fileID: 1847133141112682291, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

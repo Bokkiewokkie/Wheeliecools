@@ -4768,7 +4768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2500846232401857558, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2920255235492429923, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
       propertyPath: m_sharedMaterial
@@ -4776,7 +4776,7 @@ PrefabInstance:
       objectReference: {fileID: 1847133141112682291, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
     - target: {fileID: 3104676522792655540, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
       propertyPath: m_text
-      value: ''
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3104676522792655540, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
       propertyPath: m_sharedMaterial
@@ -4934,6 +4934,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cacb441e735904eae4f0d8128cc562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopNav
+--- !u!1 &2051285955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2500846232401857558, guid: 0765b5cdf3c432e478524bac4a3ba96c, type: 3}
+  m_PrefabInstance: {fileID: 2051285953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2056497508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5219,17 +5224,17 @@ MonoBehaviour:
   OnInspectStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051285954}
-        m_TargetAssemblyTypeName: ShopNav, Assembly-CSharp
-        m_MethodName: ShopLoad
-        m_Mode: 1
+      - m_Target: {fileID: 2051285955}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1984739699}
         m_TargetAssemblyTypeName: Movement, Assembly-CSharp
@@ -5243,9 +5248,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2051285954}
+        m_TargetAssemblyTypeName: ShopNav, Assembly-CSharp
+        m_MethodName: ShopLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnInspectStop:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2051285955}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &2697545743204877956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5342,14 +5371,4 @@ SceneRoots:
   - {fileID: 77583055}
   - {fileID: 1929349985}
   - {fileID: 2051285953}
-  - {fileID: 1929349985}
-  - {fileID: 1198834310}
-  - {fileID: 1953533182}
-  - {fileID: 152796629}
-  - {fileID: 1917118995}
-  - {fileID: 1758166913}
-  - {fileID: 1369802366}
-  - {fileID: 914990515}
-  - {fileID: 1400454534}
-  - {fileID: 1068551423}
   - {fileID: 609244637}

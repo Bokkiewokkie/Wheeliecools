@@ -10,4 +10,9 @@ public class ShopOrderRemover : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Begone()
+    {
+        Destroy(gameObject);
+    }
+
 }
