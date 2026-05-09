@@ -12,11 +12,13 @@ public class AudioManager : MonoBehaviour
     1 - First gameplay song
     2 - Second gameplay song
     3 - Shop theme
-    4 - Ending theme
+    4 - Third gameplay song
+    5 - Ending theme
     */
     private AudioSource MusicPlayer;
     private int QueueTime = 0;
     private bool FirstTrack = false;
+    private bool SecondTrack = false;
 
     private AudioClip Interrupted;
     private int InterruptResumeTime;
@@ -53,8 +55,7 @@ public class AudioManager : MonoBehaviour
 
         if (time + 1.0f > QueueTime)
         {
-            int Track = FirstTrack ? 2 : 1;
-            SwitchMusic(Track);
+            HandleGameplayTracks();
         }
     }
 
@@ -80,13 +81,32 @@ public class AudioManager : MonoBehaviour
     public void SwitchMusic(int track)
     {
         MusicPlayer.clip = Songs[track]; //Change to selected
-        if(track == 1 || track == 2)
+        if(track == 1 || track == 2 || track == 3)
         {
-            FirstTrack = !FirstTrack;
             MusicPlayer.loop = false;
             QueueTime = (int)AudioSettings.dspTime + (int)Songs[track].length; //When the next song should play    
         }
         MusicPlayer.Play();
+    }
+
+    public void HandleGameplayTracks()
+    {
+        if (FirstTrack)
+        {
+            SecondTrack = true;
+            FirstTrack = false;
+            SwitchMusic(2);
+        }
+        else if(SecondTrack)
+        {
+            SecondTrack = false;
+            SwitchMusic(4);
+        }
+        else
+        {
+            FirstTrack = true;
+            SwitchMusic(1);
+        }
     }
 
     //This is basically only used so we can switch to the shop music and then back to the game
