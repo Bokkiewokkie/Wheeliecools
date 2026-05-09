@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour
     public void SwitchMusic(int track)
     {
         MusicPlayer.clip = Songs[track]; //Change to selected
-        if(track == 1 || track == 2 || track == 3)
+        if(track == 1 || track == 2 || track == 4)
         {
             MusicPlayer.loop = false;
             QueueTime = (int)AudioSettings.dspTime + (int)Songs[track].length; //When the next song should play    
