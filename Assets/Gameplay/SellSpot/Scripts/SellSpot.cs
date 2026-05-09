@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(GlassSpot))]
 public class SellSpot : MonoBehaviour
@@ -9,6 +10,7 @@ public class SellSpot : MonoBehaviour
 	[Range(0f, 100f)]
 	public float perfectionMargin = 10f;
 
+	public UnityEvent<Request> RequestFulfilled;
 
 	private GlassSpot glassSpot;
 	private bool wasEmpty = true;
@@ -76,6 +78,7 @@ public class SellSpot : MonoBehaviour
 				  $"Purity: {bestScore.purityScore:0.0}  " +
 				  $"Fill: {bestScore.fillScore:0.0}]");
 
+		RequestFulfilled.Invoke(matched);
 		RequestManager.Instance?.DestroyRequest(bestIndex);
 		glassSpot.TakeGlass();
 		Destroy(glass.gameObject);

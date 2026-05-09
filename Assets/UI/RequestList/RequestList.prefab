@@ -191,6 +191,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47276b8265a0fada691622911b5f5407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RequestListUI
+  cardPrefab: {fileID: 3433862117930929555, guid: 17c888ff5e3867a468ba213017fbeeae, type: 3}
+  cardContainer: {fileID: 5082549692645386611}
+  requestDuration: 60
 --- !u!1 &4266214886269935665
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5082549692645386611}
-  - component: {fileID: 4417692100906737997}
+  - component: {fileID: 5754781426662340134}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -458,10 +461,10 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000035949073}
-  m_SizeDelta: {x: 0, y: 454.5288}
+  m_AnchoredPosition: {x: 10, y: 0.00086611975}
+  m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &4417692100906737997
+--- !u!114 &5754781426662340134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -470,21 +473,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5879302779499050876}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
   m_Padding:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 30
-  m_ChildAlignment: 1
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 200, y: 320}
-  m_Spacing: {x: 12, y: 12}
-  m_Constraint: 1
-  m_ConstraintCount: 3
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &5895453264553135482
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,17 +679,13 @@ PrefabInstance:
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: ed2e47cec7d2908429787100705bcdde, type: 2}
-    - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_fontSizeBase
       value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 1202285019548920541, guid: ed2e47cec7d2908429787100705bcdde, type: 2}
+      objectReference: {fileID: 1847133141112682291, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_VerticalAlignment
       value: 512

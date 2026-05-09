@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -32,11 +31,13 @@ public class RequestManager : MonoBehaviour
 		}
 	}
 
-	public void GenerateRequest()
+	public Request GenerateRequest()
 	{
 		Request random = Request.GenerateRandom(RecipeManager.Instance.Recipes, glassTypes, minFill, maxFill, fillSteps);
-		Requests.Add(random);
+		if (random != null)
+			Requests.Add(random);
 		RequestCreated.Invoke();
+		return random;
 	}
 
 	public void DestroyRequest(int index)
