@@ -43,7 +43,25 @@ public class RequestCardUI : MonoBehaviour
 			fillText.text = $"Fill: {request.targetFill * 100f:0}%";
 
 		if (glassTypeText != null)
-			glassTypeText.text = $"Glass: {request.glassType}";
+			glassTypeText.text = $"Glass: ";
+			switch (request.glassType)
+			{
+				case 0:
+				glassTypeText.text += "Standard";
+				break;
+				case 1:
+				glassTypeText.text += "Cocktail";
+				break;
+				case 2:
+				glassTypeText.text += "Wine";
+				break;
+				case 3:
+				glassTypeText.text += "Mug";
+				break;
+				case 4:
+				glassTypeText.text += "Shot";
+				break;
+			}
 	}
 
 	private void ResetTimerBar()

@@ -28,6 +28,11 @@ public class GlassSpot : MonoBehaviour
 
 	void Start()
 	{
+		SpawnGlass();
+	}
+
+	public void SpawnGlass()
+	{
 		if (IsEmpty && startingGlassPrefab != null)
 		{
 			PlaceGlass(Instantiate(startingGlassPrefab));

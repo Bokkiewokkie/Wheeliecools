@@ -13,8 +13,9 @@ public class EndScreenManager : MonoBehaviour
 
     private void UpdateScore()
     {
-        ScoreField.text = "Final Score\n";
-        ScoreField.text = "Remaining Cash:" + InventoryManager.Instance.Funds.ToString();
+        ScoreField.text += "Final Score\n";
+        ScoreField.text += "Remaining Cash:" + InventoryManager.Instance.Funds.ToString() + "\n";
+        ScoreField.text += "Completed Orders: " + ScoreManager.Instance.completedrequests.ToString();
     }
 
     public void ReturnToMenu()

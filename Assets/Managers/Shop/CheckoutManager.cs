@@ -110,11 +110,11 @@ public class CheckoutManager : MonoBehaviour
                 Purchase(Bottle, amount, price);
             }
             Cart.Clear(); //Don't forget to empty that out
-            ItemRemover.Reset();
             Wheel.Reset(); //After you complete your purchase, the wheel gets reset
             PercentageFee = 8f;
             WheelValue.Reset();
             FormatCart(); //And to show it
+            ItemRemover.Reset(); //This thing is a little unreliable I just want you to go last okay
         }
     }
 

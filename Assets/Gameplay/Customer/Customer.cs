@@ -83,11 +83,11 @@ public class Customer : MonoBehaviour
 			yield return null;
 		}
 
-		// Timer ran out — clean up and notify listeners.
+		// Timer ran out ï¿½ clean up and notify listeners.
 		_activeTimers.Remove(request);
-		RequestManager.Instance?.Requests.Remove(request);
-
 		OnRequestExpired?.Invoke(request);
+		RequestManager.Instance?.DestroyRequest(request);
+		PlaceOrder(); //Ask for something else
 	}
 
 	private IEnumerator DoubleRequestCooldownRoutine()

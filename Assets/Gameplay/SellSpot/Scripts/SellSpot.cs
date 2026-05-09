@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System;
 
 [RequireComponent(typeof(GlassSpot))]
 public class SellSpot : MonoBehaviour
@@ -70,7 +71,7 @@ public class SellSpot : MonoBehaviour
 		Request matched = requests[bestIndex];
 		float payout = CalculatePayout(glass, bestScore);
 
-		InventoryManager.Instance.Funds += payout;
+		InventoryManager.Instance.Funds += (float)Math.Round(payout,2);
 
 		Debug.Log($"SellSpot: Matched '{matched.recipe.recipeName}' " +
 				  $"(score {bestScore.total:0.0}/100)  +${payout:0.00} " +

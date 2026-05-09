@@ -45,6 +45,11 @@ public class RequestManager : MonoBehaviour
 		Requests.RemoveAt(index);
 		RequestDestroyed.Invoke();
 	}
+	public void DestroyRequest(Request request)
+	{
+		Requests.Remove(request);
+		RequestDestroyed.Invoke();
+	}
 }
 
 #if UNITY_EDITOR
