@@ -214,7 +214,7 @@ PrefabInstance:
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 1202285019548920541, guid: ed2e47cec7d2908429787100705bcdde, type: 2}
+      objectReference: {fileID: 1847133141112682291, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -336,10 +336,14 @@ PrefabInstance:
     - target: {fileID: 3588974124283521369, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1224989041}
+      objectReference: {fileID: 443013051}
     - target: {fileID: 3588974124283521369, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadScene
+      value: StartGameReal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588974124283521369, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: StartGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5323322658555278356, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
       propertyPath: m_text
@@ -516,13 +520,33 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 733667500774712646, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 443013051}
   m_SourcePrefab: {fileID: 100100000, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
 --- !u!224 &443013049 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9068608324484229315, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
   m_PrefabInstance: {fileID: 443013048}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &443013050 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 733667500774712646, guid: 9559c4f1c728945429da9454d5efa9eb, type: 3}
+  m_PrefabInstance: {fileID: 443013048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &443013051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443013050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb5980d9e0c68d43b1d539a166fc3cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartGame
 --- !u!1001 &491776495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -965,7 +989,7 @@ PrefabInstance:
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 1202285019548920541, guid: ed2e47cec7d2908429787100705bcdde, type: 2}
+      objectReference: {fileID: 1847133141112682291, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
@@ -1617,7 +1641,7 @@ PrefabInstance:
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 1202285019548920541, guid: ed2e47cec7d2908429787100705bcdde, type: 2}
+      objectReference: {fileID: 1847133141112682291, guid: 95e93156d679ce14e92375f43b5d9f89, type: 2}
     - target: {fileID: 1930601852806165211, guid: 85be9962178ab7f4f965f864bba49bea, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
